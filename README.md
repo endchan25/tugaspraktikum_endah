@@ -839,5 +839,181 @@ f. Heap Sort: Membangun struktur data heap dan mengambil elemen terbesar (pada h
 
 Setiap algoritma pengurutan memiliki kompleksitas waktu yang berbeda-beda dalam hal kinerja, tergantung pada ukuran data dan struktur data yang digunakan. Pemilihan algoritma pengurutan yang tepat dapat mempengaruhi efisiensi operasi pengurutan dalam suatu program.
 
+
+V. Spring web
+- Spring Web adalah Bagian dari Spring Framework: Ini membantu kita membuat aplikasi web dengan mudah menggunakan Java.
+- MVC untuk Mengelola Logika: Spring Web menggunakan pola desain MVC untuk memisahkan tugas dalam aplikasi. Model (data), View (tampilan), dan Controller (logika) bekerja bersama.
+- Dependency Injection (DI): Konsep ini membuat pengaturan dan manajemen aplikasi lebih mudah. Spring Web membantu kita mengatur ketergantungan antar kelas.
+- Spring Boot untuk Pengembangan Cepat: Spring Boot membuat pengembangan aplikasi web lebih cepat dengan memberikan pengaturan otomatis dan aturan yang jelas.
+- RESTful Web Services: Spring Web mendukung pembuatan layanan web RESTful, memudahkan komunikasi antar aplikasi.
+- Integrasi dengan Teknologi Web Modern: Spring Web dapat berkolaborasi dengan teknologi web modern seperti HTML5, CSS, dan JavaScript.
+- Keamanan dengan Spring Security: Spring Security membantu kita melindungi aplikasi web dari akses yang tidak sah dan memberikan kontrol otorisasi.
+
+
+  VI. Graph
+  Graph (graf) adalah struktur data yang terdiri dari simpul-simpul (nodes) yang terhubung oleh sisi-sisi (edges). Graph digunakan untuk merepresentasikan hubungan atau keterkaitan antar objek. Dalam graph, setiap simpul mewakili objek, dan setiap sisi mewakili hubungan atau koneksi antara dua objek tersebut.
+   graph dengan lebih sederhana:
+- Node (simpul): Titik atau objek dalam graph, seperti kota atau titik dalam peta.
+- Sisi (edge): Koneksi antar dua simpul. Ini bisa berupa garis atau panah yang menghubungkan dua kota.
+- Terarah atau Tidak Terarah:
+- Terarah: Jika sisi memiliki arah, misalnya A ke B, berarti bisa dari A ke B tapi tidak sebaliknya.
+- Tidak Terarah: Jika sisi tidak memiliki arah, misalnya A terhubung dengan B, berarti bisa dari A ke B atau sebaliknya.
+- Contoh Keseharian: Graph bisa mewakili jaringan sosial (simpul adalah orang, sisi adalah pertemanan), peta jalan (simpul adalah persimpangan, sisi adalah jalan), dan banyak lagi.
+
+Jadi, graph adalah cara untuk merepresentasikan hubungan atau keterkaitan antar objek dengan menggunakan simpul dan sisi.
+
+Berikut adalah beberapa jenis graph yang umum:
+- Graph Tidak Terarah (Undirected Graph): Sisi-sisinya tidak memiliki arah. Hubungan antara dua simpul bersifat dua arah atau saling menguntungkan.
+ Contoh Graph Tidak Terarah:
+A -- B
+|    |
+C -- D
+Dalam contoh ini, terdapat empat simpul: A, B, C, dan D. Setiap garis menghubungkan dua simpul, menunjukkan hubungan yang tidak memiliki arah. Sebagai contoh, garis antara A dan B bisa diartikan sebagai A terhubung ke B dan sebaliknya.
+Graph ini juga bisa diwakili dalam bentuk matriks ketetanggan, dengan entri-eentri yang menunjukkan keberadaan sisi antar simpul.
+Contoh Graph Tidak Terarah dalam Bentuk Matriks Ketetanggan:
+   A  B  C  D
+A  0  1  1  0
+B  1  0  1  0
+C  1  1  0  1
+D  0  0  1  0
+Dalam matriks ini, nilai 1 menunjukkan bahwa ada sisi antara dua simpul, dan nilai 0 menunjukkan tidak adanya sisi. Dengan demikian, A terhubung ke B, B terhubung ke A dan C, dan seterusnya.
+contoh kodingan Java sederhana
+import java.util.*;
+
+public class UndirectedGraphExample {
+
+    public static void main(String[] args) {
+        int numVertices = 4;
+        int[][] adjacencyMatrix = {
+            {0, 1, 1, 0},
+            {1, 0, 0, 1},
+            {1, 0, 0, 1},
+            {0, 1, 1, 0}
+        };
+
+        System.out.println("Graph Representation using Adjacency Matrix:");
+        printGraph(adjacencyMatrix, numVertices);
+    }
+
+    static void printGraph(int[][] matrix, int numVertices) {
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = 0; j < numVertices; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+Pada contoh ini, kita menggunakan matriks ketetanggan untuk merepresentasikan graph tidak terarah dengan empat simpul (A, B, C, D). Nilai 1 di baris i dan kolom j menunjukkan adanya sisi antara simpul i dan simpul j. Output dari program ini akan menampilkan matriks ketetanggan yang merepresentasikan graph tidak terarah. Pastikan Anda memahami bahwa ini hanyalah salah satu cara merepresentasikan graph, dan masih ada berbagai metode lain yang dapat digunakan tergantung pada kebutuhan spesifik dari aplikasi Anda.
+
+- Graph Terarah (Directed Graph): Sisi-sisinya memiliki arah. Setiap sisi memiliki simpul awal dan simpul tujuan, mengindikasikan arah hubungan.
+  Contoh Graph Terarah:
+  A --> B
+^     |
+|     v
+D <-- C
+Dalam contoh ini, terdapat empat simpul: A, B, C, dan D. Setiap panah menunjukkan arah hubungan dari simpul awal ke simpul tujuan. Sebagai contoh, panah dari A ke B menunjukkan bahwa A terhubung ke B, tetapi B tidak terhubung ke A.
+Graph ini juga bisa diwakili dalam bentuk matriks ketetanggan, dengan entri-eentri yang menunjukkan keberadaan sisi antar simpul.
+Contoh Graph Terarah dalam Bentuk Matriks Ketetanggan:
+   A  B  C  D
+A  0  1  0  1
+B  0  0  1  0
+C  0  0  0  1
+D  0  1  0  0
+Dalam matriks ini, nilai 1 menunjukkan bahwa ada sisi dari simpul awal ke simpul tujuan, dan nilai 0 menunjukkan tidak adanya sisi. Sebagai contoh, A terhubung ke B dan D, tetapi B tidak terhubung ke A, dan seterusnya.
+contoh kodingan Java sederhana :
+import java.util.*;
+
+public class DirectedGraphExample {
+
+    public static void main(String[] args) {
+        int numVertices = 4;
+        int[][] adjacencyMatrix = {
+            {0, 1, 0, 1},
+            {0, 0, 1, 0},
+            {0, 0, 0, 1},
+            {0, 1, 0, 0}
+        };
+
+        System.out.println("Graph Representation using Adjacency Matrix:");
+        printGraph(adjacencyMatrix, numVertices);
+    }
+
+    static void printGraph(int[][] matrix, int numVertices) {
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = 0; j < numVertices; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+Pada contoh di atas, kita menggunakan matriks ketetanggan untuk merepresentasikan graph terarah dengan empat simpul (A, B, C, D). Nilai 1 di baris i dan kolom j menunjukkan adanya sisi dari simpul i ke simpul j. Output dari program ini akan menampilkan matriks ketetanggan yang merepresentasikan graph terarah. Pastikan Anda memahami bahwa ini hanyalah salah satu cara merepresentasikan graph dan masih banyak cara lain yang dapat digunakan tergantung pada kebutuhan spesifik dari aplikasi Anda.
+
+- Graph Berbobot (Weighted Graph): Setiap sisi memiliki nilai atau bobot yang menyatakan seberapa penting atau berat hubungan antara dua simpul.
+  contoh kodingan Java
+  import java.util.*;
+
+public class WeightedGraphExample {
+
+    public static void main(String[] args) {
+        int numVertices = 4;
+        int[][] weightedAdjacencyMatrix = {
+            {0, 2, 0, 4},
+            {0, 0, 1, 0},
+            {0, 0, 0, 3},
+            {0, 0, 0, 0}
+        };
+
+        System.out.println("Weighted Graph Representation using Adjacency Matrix:");
+        printWeightedGraph(weightedAdjacencyMatrix, numVertices);
+    }
+
+    static void printWeightedGraph(int[][] matrix, int numVertices) {
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = 0; j < numVertices; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+Pada contoh ini, kita menggunakan matriks ketetanggan untuk merepresentasikan graph berbobot dengan empat simpul (A, B, C, D). Nilai pada matriks menunjukkan bobot dari sisi yang menghubungkan simpul-simpul tersebut. Output dari program ini akan menampilkan matriks ketetanggan yang merepresentasikan graph berbobot.
+
+Representasi Graph
+Graph dapat direpresentasikan menggunakan beberapa metode, tergantung pada kebutuhan dan jenis operasi yang ingin dilakukan. Beberapa metode umum untuk merepresentasikan graph adalah:
+- Matriks Ketetanggan (Adjacency Matrix): Matriks dua dimensi digunakan untuk menyimpan informasi keterhubungan antar simpul. Baris dan kolom mewakili simpul-simpul, dan nilai di posisi (i, j) menunjukkan apakah ada sisi yang menghubungkan simpul i dan simpul j.
+  int[][] adjacencyMatrix = {
+    {0, 1, 1, 0},
+    {1, 0, 0, 1},
+    {1, 0, 0, 1},
+    {0, 1, 1, 0}
+};
+- Daftar Ketetanggan (Adjacency List): Setiap simpul memiliki daftar simpul-simpul yang terhubung langsung dengannya. Ini biasanya diimplementasikan menggunakan struktur data seperti ArrayList atau LinkedList.
+  List<List<Integer>> adjacencyList = new ArrayList<>();
+
+adjacencyList.add(Arrays.asList(1, 2));
+adjacencyList.add(Arrays.asList(0, 3));
+adjacencyList.add(Arrays.asList(0, 3));
+adjacencyList.add(Arrays.asList(1, 2));
+
+- Matriks Berbobot (Weighted Matrix): Matriks ketetanggan diubah menjadi matriks berbobot dengan menyertakan nilai bobot pada sisi-sisi yang menghubungkan simpul-simpul.
+  int[][] weightedMatrix = {
+    {0, 2, 0, 4},
+    {0, 0, 1, 0},
+    {0, 0, 0, 3},
+    {0, 0, 0, 0}
+};
+- Daftar Berbobot (Weighted List): Daftar ketetanggan diubah dengan menyertakan nilai bobot pada setiap sisi.
+  List<List<Pair<Integer, Integer>>> weightedList = new ArrayList<>();
+
+weightedList.add(Arrays.asList(new Pair<>(1, 2), new Pair<>(2, 4)));
+weightedList.add(Collections.singletonList(new Pair<>(3, 1)));
+weightedList.add(Collections.singletonList(new Pair<>(3, 3)));
+weightedList.add(Collections.emptyList());
+
+Setiap metode memiliki kelebihan dan kekurangan tergantung pada operasi yang akan dilakukan pada graph. Matriks ketetanggan baik untuk mencari keterhubungan secara cepat, tetapi membutuhkan lebih banyak ruang jika graph besar dan sebagian besar simpul tidak terhubung. Daftar ketetanggan lebih efisien untuk menyimpan graph jarang (graph dengan sedikit sisi), sedangkan matriks berbobot berguna ketika graph memiliki bobot pada sisi-sisinya. Pilihan representasi tergantung pada skenario penggunaan dan persyaratan aplikasi.
+
+
    
 
